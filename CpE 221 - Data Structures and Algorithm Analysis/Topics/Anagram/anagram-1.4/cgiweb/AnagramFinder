@@ -1,0 +1,15 @@
+#! /bin/sh
+
+HTTPD=/files/server/bin/httpd
+CGI=$HTTPD/cgi-bin
+
+echo Content-type: text/html
+#echo Content-type: text/plain
+echo ''
+
+#set
+
+$CGI/anagram --cgi --html  \
+    --bindict $CGI/AnagramFinderSupport/wordlist.bin \
+    --template $CGI/AnagramFinderSupport/template.html
+

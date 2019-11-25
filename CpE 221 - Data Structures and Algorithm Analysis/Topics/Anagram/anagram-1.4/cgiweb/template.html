@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html version="-//W3C//DTD HTML 3.2 Final//EN">
+<head>
+<title>Anagram Finder</title>
+<style type="text/css">
+    DIV.bodycopy {
+        margin-left: 15%;
+        margin-right: 10%
+    }
+</style>
+<meta name="keywords" content="anagram, finder, word, game">
+<meta name="description" content="Anagram Finder">
+<meta name="author" content="John Walker">
+<meta name="robots" content="index">
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<center>
+<h1>
+<font color="#6060E0">Anagram Finder</font><br>
+<em><font color="#60E060">Garden in a Farm</font></em>
+</h1>
+</center>
+
+<div class=bodycopy>
+
+<h2><a name="1">Step 1</a></h2>
+
+Type the phrase for which you seek anagrams into the box below and
+press the "Submit" button to generate a list of words which
+appear in anagrams of this phrase.
+
+<form method="post" action="/cgi-bin/AnagramFinder">
+<input type="hidden" name="step" value="1">
+<center>
+<b>Original phrase:</b> &nbsp;
+<input type="text" name="target"
+<!-- @1 (target phrase text input field value -->
+    size="60" maxlength="128">
+<p>
+<input type="submit" value=" Submit ">
+&nbsp;
+<input type="reset" value=" Clear ">
+</center>
+</form>
+
+<!-- 1 -->
+
+<h2><a name="2">Step 2</a></h2>
+
+Choose a word appearing in an anagram from the list below.
+Anagrams containing that word will be shown in the text area
+below.
+
+<form method="post" action="/cgi-bin/AnagramFinder">
+<input type="hidden" name="step" value="2">
+<!-- @3 (target and words hidden fields) -->
+<center>
+<select name="word"
+<!-- @2 (words in anagrams) -->
+</select>
+<br>
+<input type="checkbox" name="all">&nbsp;Generate all anagrams
+<p>
+<input type="submit" value=" Submit ">
+</center>
+</form>
+
+<!-- 2 -->
+
+<h2><a name="3">Step 3</a></h2>
+Results which contain the word you selected in Step 2 are shown in
+the text box below.  Click on a result and press "Permutations"
+to show all the permutations of the selected phrase.
+
+<form method="post" action="/cgi-bin/AnagramFinder">
+<input type="hidden" name="step" value="3">
+<!-- @6 (target, words, and anagrams for chosen word) -->
+<center>
+<select name="results"
+<!-- @4 (anagrams containing chosen word) -->
+</select>
+<p>
+<input type="submit" value=" Permutations ">
+</center>
+</form>
+
+<!-- 3 -->
+
+<h2><a name="4">Step 4</a></h2>
+
+All permutations of the phrase selected in Step 3 are shown below.
+To show permutations of a different phrase, go back to Step 3,
+highlight it, and press the "Permutations" button again.  You can
+copy permuted anagrams from the box below and paste them into
+other documents.
+
+<p>
+<form>
+<center>
+<textarea name="permutations" readonly
+<!-- @5 (permuted anagrams) -->
+</textarea>
+</center>
+</form>
+
+<!-- X -->
+
+</div>
+
+<h4><a href="/anagram"><cite>Anagram Finder</cite> Home</a></h4>
+<h4><a href="/">Fourmilab</a></h4>
+
+<p>
+
+<hr>
+
+<address>
+by <a href="/">John Walker</a><br>
+March, 2002
+</address>
+
+</body>
+</html>

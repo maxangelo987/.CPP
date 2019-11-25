@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html version="-//W3C//DTD HTML 3.2 Final//EN">
+<head>
+<title>Anagram Finder</title>
+<style type="text/css">
+    DIV.bodycopy {
+        margin-left: 10%;
+        margin-right: 10%
+    }
+</style>
+<meta name="keywords" content="anagram, finder, word, game">
+<meta name="description" content="Anagram Finder">
+<meta name="author" content="John Walker">
+<meta name="robots" content="index">
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<center>
+<h1>
+<font color="#6060E0"><img src="../webdoc/figures/anagram.gif" width=640 height=98
+    alt="Anagram Finder"></font>
+</h1>
+</center>
+
+<div class=bodycopy>
+
+An <cite>anagram</cite> of a word or phrase is the result of
+rearranging its letters to form another meaningful word or
+phrase.  For example, the an anagram of "anagram&nbsp;finder"
+is "garden&nbsp;in&nbsp;a&nbsp;farm" (work it out!).
+
+<p>
+
+<a href="/">Fourmilab</a>'s interactive anagram finder
+lets you explore acronyms for any phrase you wish.  Unlike
+many other such resources on the Internet, our anagram finder
+is organised to help you find interesting and/or funny acronyms
+without searching through a vast lists composed mostly of
+obscure words you've never heard of.
+
+<p>
+
+Acronyms are generated
+in a four step process.  First, you enter the word or phrase
+for which you're seeking the acronyms.  This produces a list
+of words contained in acronyms of your word or phrase.
+Many of these words will be obscure or uninteresting, so
+at this stage you can filter them for further exploration.
+Selecting one of the words and submitting it proceeds to
+step 3, which shows you all the anagrams containing that
+word (there may, of course, only be one).  You can then
+choose one of the anagrams and generate all of its
+<em>permutations</em> (all possible results of reordering
+words in the phrase).  Phrases from the permuted results may
+then be copied and pasted into other documents.
+
+<p>
+
+Each step in the anagram generation process recapitulates (without recomputing)
+the earlier steps, so you can back up to any earlier step at
+any point in the process.  The anagram finder is an application
+which runs on the <a href="/">Fourmilab</a> server, so
+you don't need a fast computer or lots of memory to use it.
+
+<p>
+
+Anagrams are generated based on the official dictionary (second
+edition) of that 
+<a href="http://www.scrabble.com/" target="_blank">crossword game</a>
+whose name you cannot mention
+without having lawyers burst out of your screen brandishing
+menacing documents, courtesy of Grady Ward's
+<a href="http://www.dcs.shef.ac.uk/research/ilash/Moby/" target="_blank">Moby Words</a>
+compilation.  We search the dictionary in decreasing order of word
+length, as longer words tend to produce more interesting anagrams.
+Only alphabetic characters are considered in anagrams, and accented
+characters are "flattened" by removing the accents.
+
+<h2>Step 1</h2>
+
+Type the phrase for which you seek anagrams into the box below and
+press the "Submit" button to generate a list of words which
+appear in anagrams of this phrase.
+
+<form method="post" action="/cgi-bin/AnagramFinder">
+<input type="hidden" name="step" value="1">
+<center>
+<b>Original phrase:</b> &nbsp;
+<input type="text" name="target" value="" size="60" maxlength="128">
+<p>
+<input type="submit" value=" Submit ">
+&nbsp;
+<input type="reset" value=" Clear ">
+</center>
+</form>
+
+</div>
+
+<p>
+
+<hr>
+
+<address>
+by <a href="/">John Walker</a><br>
+March, 2002
+</address>
+
+</body>
+</html>
